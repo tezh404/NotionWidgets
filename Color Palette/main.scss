@@ -1,0 +1,112 @@
+$device-width: 35vh;
+$device-height: 96vh;
+$tile-size: $device-width / 7;
+
+$duration: 0.6s;
+$easing: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+$type-small: $tile-size / 4;
+$type-normal: $tile-size / 3;
+$type-large: $tile-size / 2.5;
+
+$colors: (
+  #FBEC6B,
+  #F4BC6B,
+  #EB8B6B,
+  #E0536B,
+  #D6306D,
+  #A32C68,
+  #722A65,
+  #422662,
+  #12255D,
+  #275B75,
+  #3C918B,
+  #52C6A2,
+  #66F8B6,
+  lighten(#66f8b6, 10%)
+);
+
+@function list-slice($list, $from, $to: length($list)) {
+  $result: ();
+  
+  @for $i from $from through $to {
+    $result: append($result, nth($list, $i));
+  }
+  
+  @return $result;
+}
+
+@function shadows($from: 1, $app: false) {
+  $shadows: ();
+  $i: 0;
+  
+  @if ($app) {
+    @each $color in list-slice($colors, $from, length($colors) - 1) {
+      $i: $i + 1;
+      $shadows: append($shadows, $color, comma);
+    }
+    
+    @return $shadows;
+  }
+
+  @each $color in list-slice($colors, $from, length($colors) - 1) {
+    $i: $i + 1;
+    $subshadows: ();
+    $darkest-color: nth(list-slice($colors, $from), $i + 1);
+
+    @for $j from 1 through 7 {
+      $subshadows: append(
+        $subshadows,
+        ($j - 1) * $tile-size $i * $tile-size mix($darkest-color, $color, percentage($j / 7)),
+        comma);
+    }
+
+    $shadows: append($shadows, $subshadows, comma);
+  }
+  
+  @return $shadows;
+}
+
+%transition {
+  transition: all $duration $easing;
+}
+
+.ColorPalette2 {
+  // height: $device-height - $tile-size * 1.5;
+  // width: 100%;
+  display: block;
+  width: 35vh;
+  height: 65vh;
+  position: absolute;
+  top: 0;
+  left: 35vh;
+  background: linear-gradient(shadows(1, true));
+}
+
+
+
+.ColorPalette {
+  @extend %transition;
+  width: 35vh;
+  height: 65vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  
+  &.ColorPalette {
+    &:before {
+      content: '';
+      display: block;
+      height: $tile-size;
+      width: $tile-size;
+      position: absolute;
+      top: -$tile-size;
+      left: 0;
+      box-shadow: shadows();
+      transition: box-shadow $duration $easing;
+    }
+  }
+}
+
+

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900"
+    />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: white;
+      }
+
+      .container {
+        display: flex;
+        max-width: 230px;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+
+      .div3 {
+        display: flex;
+        color: #ef2f3c;
+      }
+
+      .div4 {
+        display: flex;
+        color: #f0a202;
+      }
+
+      .div5 {
+        display: flex;
+        color: #276fbf;
+      }
+
+      .time {
+        font-family: "Montserrat", sans-serif;
+        font-size: 6em;
+        color: #183059;
+        text-align: center;
+      }
+
+      .countday {
+        font-family: "Montserrat", sans-serif;
+        font-size: 2em;
+
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="div1"><div id="hour" class="time"></div></div>
+      <div class="diva"><div class="time">:</div></div>
+      <div class="div2"><div id="minute" class="time"></div></div>
+      <div class="div3">
+        <div id="days" class="countday"></div>
+        <div class="countday">D</div>
+      </div>
+      <div class="div4">
+        <div id="hours" class="countday"></div>
+        <div class="countday">H</div>
+      </div>
+      <div class="div5">
+        <div id="minutes" class="countday"></div>
+        <div class="countday">M</div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const year = new Date().getFullYear();
+    const myDate = new Date("Jan 1, 2024 00:00:00");
+
+    // countdown
+    let timer = setInterval(function () {
+      // get today's date
+      const today = new Date().getTime();
+
+      // Time
+      let dateP = new Date();
+      let dateS = dateP.toLocaleTimeString();
+      dateS = dateS.slice(0, -3).split(":");
+
+      let hour = dateS[0];
+      let minute = dateS[1];
+      let second = dateS[2];
+
+      // display time
+
+      document.getElementById("hour").innerHTML = hour;
+      document.getElementById("minute").innerHTML = minute;
+
+      // get the difference
+      const diff = myDate - today;
+
+      // math
+      let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+      // display
+      document.getElementById("days").innerHTML = days;
+      document.getElementById("hours").innerHTML = hours;
+      document.getElementById("minutes").innerHTML = minutes;
+    }, 1);
+  </script>
+</html>

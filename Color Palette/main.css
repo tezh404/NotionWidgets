@@ -1,0 +1,33 @@
+.ColorPalette {
+  transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.ColorPalette2 {
+  display: block;
+  width: 35vh;
+  height: 65vh;
+  position: absolute;
+  top: 0;
+  left: 35vh;
+  background: linear-gradient(#FBEC6B, #F4BC6B, #EB8B6B, #E0536B, #D6306D, #A32C68, #722A65, #422662, #12255D, #275B75, #3C918B, #52C6A2, #66F8B6);
+}
+
+.ColorPalette {
+  width: 35vh;
+  height: 65vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.ColorPalette.ColorPalette:before {
+  content: "";
+  display: block;
+  height: 5vh;
+  width: 5vh;
+  position: absolute;
+  top: -5vh;
+  left: 0;
+  box-shadow: 0vh 5vh #fae56b, 5vh 5vh #f9de6b, 10vh 5vh #f8d76b, 15vh 5vh #f7d16b, 20vh 5vh #f6ca6b, 25vh 5vh #f5c36b, 30vh 5vh #f4bc6b, 0vh 10vh #f3b56b, 5vh 10vh #f1ae6b, 10vh 10vh #f0a76b, 15vh 10vh #efa06b, 20vh 10vh #ee996b, 25vh 10vh #ec926b, 30vh 10vh #eb8b6b, 0vh 15vh #e9836b, 5vh 15vh #e87b6b, 10vh 15vh #e6736b, 15vh 15vh #e56b6b, 20vh 15vh #e3636b, 25vh 15vh #e25b6b, 30vh 15vh #e0536b, 0vh 20vh #df4e6b, 5vh 20vh #dd496c, 10vh 20vh #dc446c, 15vh 20vh #da3f6c, 20vh 20vh #d93a6c, 25vh 20vh #d7356d, 30vh 20vh #d6306d, 0vh 25vh #cf2f6c, 5vh 25vh #c72f6c, 10vh 25vh #c02e6b, 15vh 25vh #b92e6a, 20vh 25vh #b22d69, 25vh 25vh #aa2d69, 30vh 25vh #a32c68, 0vh 30vh #9c2c68, 5vh 30vh #952b67, 10vh 30vh #8e2b67, 15vh 30vh #872b66, 20vh 30vh #802b66, 25vh 30vh #792a65, 30vh 30vh #722a65, 0vh 35vh #6b2965, 5vh 35vh #642964, 10vh 35vh #5d2864, 15vh 35vh #572863, 20vh 35vh #502763, 25vh 35vh #492762, 30vh 35vh #422662, 0vh 40vh #3b2661, 5vh 40vh #342661, 10vh 40vh #2d2660, 15vh 40vh #27255f, 20vh 40vh #20255e, 25vh 40vh #19255e, 30vh 40vh #12255d, 0vh 45vh #152d60, 5vh 45vh #183464, 10vh 45vh #1b3c67, 15vh 45vh #1e446b, 20vh 45vh #214c6e, 25vh 45vh #245372, 30vh 45vh #275b75, 0vh 50vh #2a6378, 5vh 50vh #2d6a7b, 10vh 50vh #30727e, 15vh 50vh #337a82, 20vh 50vh #368285, 25vh 50vh #398988, 30vh 50vh #3c918b, 0vh 55vh #3f998e, 5vh 55vh #42a092, 10vh 55vh #45a895, 15vh 55vh #49af98, 20vh 55vh #4cb79b, 25vh 55vh #4fbe9f, 30vh 55vh #52c6a2, 0vh 60vh #55cda5, 5vh 60vh #58d4a8, 10vh 60vh #5bdbab, 15vh 60vh #5de3ad, 20vh 60vh #60eab0, 25vh 60vh #63f1b3, 30vh 60vh #66f8b6, 0vh 65vh #6df8b9, 5vh 65vh #74f9bd, 10vh 65vh #7bf9c0, 15vh 65vh #82f9c3, 20vh 65vh #89f9c6, 25vh 65vh #90faca, 30vh 65vh #97facd;
+  transition: box-shadow 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+}/*# sourceMappingURL=main.css.map */
