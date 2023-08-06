@@ -18,10 +18,12 @@
         max-width: 230px;
         flex-wrap: wrap;
         justify-content: space-evenly;
+        flex-direction: column;
       }
 
       .div3 {
         display: flex;
+
         color: #ef2f3c;
       }
 
@@ -48,24 +50,39 @@
 
         text-align: center;
       }
+      .timea{
+        display: flex;
+        justify-content: space-evenly;
+
+      }
+      .timeb{
+        display: flex;
+        justify-content: space-evenly;
+
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="div1"><div id="hour" class="time"></div></div>
-      <div class="diva"><div class="time">:</div></div>
-      <div class="div2"><div id="minute" class="time"></div></div>
-      <div class="div3">
-        <div id="days" class="countday"></div>
-        <div class="countday">D</div>
+      <div class="timea">
+        <div class="div1"><div id="hour" class="time"></div></div>
+        <div class="diva"><div class="time">:</div></div>
+        <div class="div2"><div id="minute" class="time"></div></div>
       </div>
-      <div class="div4">
-        <div id="hours" class="countday"></div>
-        <div class="countday">H</div>
-      </div>
-      <div class="div5">
-        <div id="minutes" class="countday"></div>
-        <div class="countday">M</div>
+
+      <div class="timeb">
+        <div class="div3">
+          <div id="days" class="countday"></div>
+          <div class="countday">D</div>
+        </div>
+        <div class="div4">
+          <div id="hours" class="countday"></div>
+          <div class="countday">H</div>
+        </div>
+        <div class="div5">
+          <div id="minutes" class="countday"></div>
+          <div class="countday">M</div>
+        </div>
       </div>
     </div>
   </body>
